@@ -3,55 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Tâches</title>
-    <link rel="stylesheet" href="style2.css" />
-      <!-- Font Awesome Cdn Link -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <title>Gestion Des Tâches</title>
+    <link rel="stylesheet" href="style2.css" /> 
+      <link rel="stylesheet" href="./lib/fontawesome/css/all.css">
+      <link rel="stylesheet" href="./lib/fontawesome/css/fontawesome.min.css">
+      <script src="./js/jquery-3.6.0.js"></script>
 </head>
 <body>
     <div class="container">
- 
-    
-    
         <section class="main">
           <div class="main-top">
-            <h1>Bienvenue sur votre logiciel de gestion</h1>
-            <!-- <i class="fas fa-user-cog"></i> -->
+            <h1>Bienvenue sur votre gestionnaire de tâches</h1>
           </div>
 
           <div class="users">
 
             <div class="card">
-              <img src="./pic/img1.jpg">
-              <h4>Tâ</h4>  
+              <img src="img/icon.png">
+              <h4>Total Tâches</h4>  
               <div class="per">
                 <table>
                   <tr>
-                    <td><span>82%</span></td> 
+                    <td><span id="total"></span></td> 
                   </tr> 
                 </table>
               </div> 
             </div>
 
             <div class="card">
-              <img src="./pic/img1.jpg">
-              <h4>Tâ</h4>  
+              <img src="img/checked.png">
+              <h4>Tâches Accomplis</h4>  
               <div class="per">
                 <table>
                   <tr>
-                    <td><span>82%</span></td> 
+                    <td><span id="fait"></span></td> 
                   </tr> 
                 </table>
               </div> 
             </div>
 
             <div class="card">
-              <img src="./pic/img2.jpg">
-              <h4>Balbina kherr</h4> 
+              <img src="img/icon.png">
+              <h4>Tâches Restant</h4> 
               <div class="per">
                 <table>
                   <tr>
-                    <td><span>82%</span></td> 
+                    <td><span id="reste"></span></td> 
                   </tr> 
                 </table>
               </div> 
@@ -63,58 +60,55 @@
             <div class="attendance-list">
               <div class="head">
                 <h1>Liste de Vos Tâches</h1>
-                <button>Nouvelle Tâches</button>
+                <input type="text" id="find" placeholder="Recherche">
+                <button onclick="openForm()">Nouvelle Tâches</button>
               </div>
-              <table class="table">
+              <table class="table" id="listTache">
                 <thead>
                   <tr>
                     <th>N°</th>
-                    <th>Nom</th>
-                    <th>Date Debut</th>
+                    <th>Tâche</th>
+                    <th>Date Fin</th>
                     <th>Date Fin</th>
                     <th>Durer</th> 
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>01</td>
-                    <td>Sam David</td>
-                    <td>Design</td>
-                    <td>03-24-22</td>
-                    <td>8:00AM</td> 
-                    <td><button>View</button></td>
-                  </tr>
-                  <tr class="active">
-                    <td>02</td>
-                    <td>Balbina Kherr</td>
-                    <td>Coding</td>
-                    <td>03-24-22</td>
-                    <td>9:00AM</td> 
-                    <td><button>View</button></td>
-                  </tr>
-                  <tr>
-                    <td>03</td>
-                    <td>Badan John</td>
-                    <td>testing</td>
-                    <td>03-24-22</td>
-                    <td>8:00AM</td> 
-                    <td><button>View</button></td>
-                  </tr>
-                  <tr>
-                    <td>04</td>
-                    <td>Sara David</td>
-                    <td>Design</td>
-                    <td>03-24-22</td>
-                    <td>8:00AM</td> 
-                    <td><button>View</button></td>
-                  </tr> 
+                 <!-- ici on listera mes tâches -->
                 </tbody>
               </table>
             </div>
           </section>
+
+          <!-- ma formulaire -->
+
+          <div class="popup">
+            <div class="form-popup" id="popupForm">
+            <form class="form-container" id="formData">
+                <h2>Nouvelle Tâches</h2>
+                <label for="tache">
+                  <strong>Tâche</strong>
+                </label>
+                <input type="text" id="tache" placeholder="Inserer Tâche" name="Tache" required  />
+                <label for="dateFin">
+                  <strong>Date Début</strong>
+                </label>
+                <input type="date" id="dateDebut"  placeholder="Date De Début" name="dateFin" required  />
+                <label for="dateFin"> 
+                  <strong>Date Fin</strong>
+                </label>
+                <input type="Date" id="dateFin" placeholder="Date De Fin" name="dateFin" required  />
+                <div class="flex">
+                  <button type="submit" class="btn">Ajouter</button>
+                  <button type="button" class="btn cancel" onclick="closeForm()">Retour</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
         </section>
       </div>
-    
+    <script src="js/script.js"></script>
 </body>
 </html>
