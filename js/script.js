@@ -1,10 +1,12 @@
 function openForm() {
     document.getElementById("popupForm").style.display = "block"; 
-    // document.getElementById("main").style.filter = "blur(25px)";
+    document.getElementById("main").style.filter = "blur(25px)";  
   }
 
   function closeForm() {
     document.getElementById("popupForm").style.display = "none";
+    document.getElementById("main").style.filter = "none";
+
   }
 
 $(document).ready(function () {
@@ -94,4 +96,3 @@ function viderInput(){
   $("#dateDebut").val("");
   $("#dateFin").val("");
 }
-

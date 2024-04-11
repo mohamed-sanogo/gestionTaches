@@ -1,98 +1,291 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Popins', sans-serif;
-    box-sizing: border-box;
-}
-.container{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #153677, #4e085f); 
-    padding: 10px;
-}
-.todo-app{
-    width: 100%;
-    max-width: 540px;
-    background: #fff;
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
-}
-.todo-app h2{
-    color: #002765;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.todo-app h2 img{
-    width: 30px;
-    margin-left: 10px;
-}
-.row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #edeef0;
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
-}
-input{
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
-}
-button{
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    background: #ff5945;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 40px;
-}
-ul li{
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
-}
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-image: url('img/unchecked.png');
-    background-size: cover;
-    background-position: center;
-    top: 12px;
-    left: 8px;
-}
-ul li.checked{
-    color: #555;
-    text-decoration: line-through;
-}
-ul li.checked::before{ 
-    background-image: url('img/checked.png');
-}
-ul li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    text-align: center;
-    line-height: 40px; 
-    border-radius: 50px;
-}
-ul li span:hover{
-    background: #edeef0;
+/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
+body {
+  background: rgb(226, 226, 226);
+  user-select: none;
+}
+
+.container {
+  display: flex;
+}
+
+/* MAin Section */
+.main {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+
+.main-top {
+  width: 100%;
+}
+
+.main-top h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.main .users {
+  display: flex;
+  width: 100%;
+}
+
+.users .card {
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  gap: 5px;
+  /* cursor: pointer; */
+}
+
+.users .card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.users .card h4 {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.users .per span {
+  padding: 5px;
+  border-radius: 10px;
+  background: rgb(223, 223, 223);
+}
+
+/*Attendance List serction  */
+.attendance {
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+
+.attendance-list {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-list .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.head button {
+  padding: 6px 20px;
+  border-radius: 10px;
+  background: #4AD489;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #4AD489;
+}
+
+.head button:hover {
+  background: transparent;
+  color: black;
+  transition: 0.5rem;
+}
+
+.head input {
+  border: 3px solid #4AD489;
+  padding: 6px 20px;
+  border-radius: 10px;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  min-width: 100%;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
+
+table thead tr {
+  color: #fff;
+  background: #34AF6D;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background: #f3f3f3;
+}
+
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #4AD489;
+}
+
+.table button {
+  padding: 6px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #4AD489;
+}
+
+.table button:hover {
+  background: #4AD489;
+  color: #fff;
+  transition: 0.5rem;
+}
+
+/* ma formulaire */
+.popup {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-45%, 5%);
+  border: 2px solid #666;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 550px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #eee;
+}
+
+.form-container h2 {
+  margin-bottom: 10px;
+}
+
+.form-container .flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 10%;
+}
+
+.form-container .btn {
+  background-color: #8ebf42;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: #cc0000;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+/* responsiviter */
+@media screen and (max-width: 750px) {
+  .main-top h1 {
+    font-size: 13px;
+  }
+
+  .users .card {
+    width: 50%;
+  }
+
+  .users .card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .users .card h4 {
+    font-size: 8px;
+  }
+
+  .attendance-list .head {
+    padding: 2px;
+    gap: 5px;
+  }
+
+  .head input {
+    padding: 2px 4px;
+    font-size: 8px;
+  }
+
+  .head h1 {
+    font-size: 8px;
+  }
+
+  .head button {
+    padding: 2px 4px;
+    font-size: 8px;
+  }
+
+  .table th,
+  .table td {
+    padding: 4px 8px;
+    font-size: 8px;
+  }
+
+  .form-container h2 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .form-container strong {
+    font-size: 12px;
+  }
+
+  .form-container input[type="text"],
+  .form-container input[type="date"] {
+    padding: 8px;
+    font-size: 8px;
+  }
+
+  .form-container .btn {
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+}
